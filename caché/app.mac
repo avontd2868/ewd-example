@@ -49,11 +49,10 @@ validateForm(sessId)
   * Add a new person to the PEOPLE global
   */
 addPerson(name, phone, email)
- n nextRecordIndex
- s nextRecordIndex=($o(^PEOPLE(""),-1)+1)
- s ^PEOPLE(nextRecordIndex,"name")=name
- s ^PEOPLE(nextRecordIndex,"phone")=phone
- s ^PEOPLE(nextRecordIndex,"email")=email 
+ set person = ##class(App.Person).%New()
+ set person.name = name
+ set person.email = email
+ set person.phone = phone 
  QUIT "" 
  
  /**
@@ -61,7 +60,7 @@ addPerson(name, phone, email)
   */
 updatePeopleSession()
  n data
- m data=^PEOPLE
+ m data=^App.PersonD
  d deleteFromSession^%zewdAPI("people",sessid)
  d mergeArrayToSession^%zewdAPI(.data,"people",sessid)
  QUIT ""
