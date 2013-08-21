@@ -1,4 +1,4 @@
-<ext4:container rootPath="csp/ewd/vendors/extjs" onBeforeRender="initIndexPage^app">
+<ext4:container rootPath="csp/ewd/vendors/extjs" onBeforeRender="initIndexPage^App.People.main">
 	<ext4:panel id="people" addPage="listPeople" />
 	<ext4:formPanel id="myFormPanel" title="Add Person" width="300" height="200" bodyPadding="10">
 		<ext4:textfield id="name" fieldLabel="Name" value="" />
